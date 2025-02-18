@@ -22,7 +22,7 @@
         "lw/typo3cms-installers": "*"
     },
     "require-dev": {
-        "composer/composer": "1.*"
+        "composer/composer": "2.*"
     },
     "extra": {
         "class": "Netresearch\\Composer\\Installer\\Plugin",
