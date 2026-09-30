@@ -67,6 +67,8 @@ class SymlinkDriver extends CoreInstallerAbstract implements CoreInstallerInterf
 			throw new SymlinkException($link, $target, 'Target doesn\'t exist');
 		}
 		$relativeTarget = $this->filesystem->findShortestPath($link, $target);
+		// Fixed command; every variable part goes through escapeshellarg().
+		// nosemgrep: php.lang.security.exec-use.exec-use
 		exec(
 			'cd ' . escapeshellarg(dirname($link)) . '; ' .
 			'ln -s ' . escapeshellarg($relativeTarget) . ' ' . escapeshellarg(basename($link)),
